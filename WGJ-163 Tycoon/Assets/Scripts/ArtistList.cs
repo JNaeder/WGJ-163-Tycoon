@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ArtistList : MonoBehaviour
 {
 
-    GameManager gM;
+    public GameManager gM;
 
     public GameObject artistListButton;
 
@@ -15,7 +15,6 @@ public class ArtistList : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gM = FindObjectOfType<GameManager>();
         
     }
 
@@ -31,6 +30,8 @@ public class ArtistList : MonoBehaviour
             {
                 GameObject newButton = Instantiate(artistListButton, Vector2.zero, Quaternion.identity, transform) as GameObject;
                 Text buttonText = newButton.GetComponentInChildren<Text>();
+                ListButton buttonListButton = newButton.GetComponent<ListButton>();
+                buttonListButton.buttonArtist = a;
                 buttonText.text = a.artistName;
 
             }

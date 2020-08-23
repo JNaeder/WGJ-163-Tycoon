@@ -13,12 +13,13 @@ public class ArtistScript : MonoBehaviour
     public Text artistTalent;
 
     GameManager gM;
+    FindArtistScreen fAS;
 
     // Start is called before the first frame update
     void Start()
     {
         gM = FindObjectOfType<GameManager>();
-
+        fAS = FindObjectOfType<FindArtistScreen>();
 
     }
 
@@ -32,8 +33,18 @@ public class ArtistScript : MonoBehaviour
     }
 
 
-    public void ChooseCard() {
-        gM.SignArtist(theArtist);
-
+    public void SelectCard() {
+        fAS.selectedCard = this.gameObject;
     }
+
+    IEnumerator WaitAndDeselect() {
+        yield return new WaitForSeconds(0.1f);
+        fAS.selectedCard = null;
+    }
+
+    public void DeselectCard() {
+        StartCoroutine(WaitAndDeselect());
+    }
+
+
 }

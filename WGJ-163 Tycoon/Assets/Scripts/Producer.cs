@@ -9,4 +9,5 @@ public class Producer : ScriptableObject
     public int producerAge;
     public float producerTalent;
     public float producerBrand;
+    public string genre;
 }

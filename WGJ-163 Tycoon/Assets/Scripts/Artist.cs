@@ -9,6 +9,7 @@ public class Artist : ScriptableObject
     public int artistAge;
     public float styleStat;
     public float talentStat;
+    public string genre;
 
 
    

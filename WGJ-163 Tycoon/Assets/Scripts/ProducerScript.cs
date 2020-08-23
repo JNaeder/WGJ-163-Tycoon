@@ -13,11 +13,13 @@ public class ProducerScript : MonoBehaviour
     public Text producerBrand;
 
     GameManager gM;
+    FindProducersScreen fPS;
 
     // Start is called before the first frame update
     void Start()
     {
         gM = FindObjectOfType<GameManager>();
+        fPS = FindObjectOfType<FindProducersScreen>();
 
 
     }
@@ -27,14 +29,23 @@ public class ProducerScript : MonoBehaviour
     {
         producerName.text = theProducer.producerName;
         producerAge.text = theProducer.producerAge.ToString();
-        producerTalent.text = theProducer.producerTalent.ToString();
-        producerBrand.text = theProducer.producerBrand.ToString();
+        producerTalent.text = theProducer.producerTalent.ToString("F1");
+        producerBrand.text = theProducer.producerBrand.ToString("F1");
     }
 
-
-    public void ChooseCard()
+    public void SelectCard()
     {
-        gM.HireProducer(theProducer);
+        fPS.selectedCard = this.gameObject;
+    }
 
+    IEnumerator WaitAndDeselect()
+    {
+        yield return new WaitForSeconds(0.1f);
+        fPS.selectedCard = null;
+    }
+
+    public void DeselectCard()
+    {
+        StartCoroutine(WaitAndDeselect());
     }
 }
