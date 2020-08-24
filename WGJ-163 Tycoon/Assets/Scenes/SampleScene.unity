@@ -1712,7 +1712,6 @@ GameObject:
   m_Component:
   - component: {fileID: 509455397}
   - component: {fileID: 509455399}
-  - component: {fileID: 509455398}
   m_Layer: 5
   m_Name: Artist List
   m_TagString: Untagged
@@ -1739,20 +1738,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00012589, y: -14.535}
   m_SizeDelta: {x: 226.21927, y: 250.59198}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &509455398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509455396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bdec2e0525434eacaba8319bedab0ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gM: {fileID: 1679232002}
-  artistListButton: {fileID: 6308548963173326007, guid: a55ea53a3024a4b95b59c8df498d29b9, type: 3}
 --- !u!114 &509455399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2765,7 +2750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -108.83}
+  m_AnchoredPosition: {x: 0, y: -108.83002}
   m_SizeDelta: {x: 0, y: -217.66263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987127625
@@ -3314,6 +3299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1269856824}
+  - component: {fileID: 1269856825}
   m_Layer: 5
   m_Name: Artist List
   m_TagString: Untagged
@@ -3343,6 +3329,25 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00019073, y: -0.00019455}
   m_SizeDelta: {x: 226.21887, y: 279.6611}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1269856825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269856823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36902fc94ac4b9348a4d30e7c8b7831b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gM: {fileID: 1679232002}
+  artistManagmentButton: {fileID: 2125358738745434163, guid: dc9d5d7e5c6611f40ba2eac584d1fa1c, type: 3}
+  artistList: {fileID: 509455397}
+  artistName: {fileID: 113808590}
+  artistAge: {fileID: 1619370846}
+  artistTalent: {fileID: 1883970898}
+  artistStyle: {fileID: 73853963}
 --- !u!1 &1273858573
 GameObject:
   m_ObjectHideFlags: 0
