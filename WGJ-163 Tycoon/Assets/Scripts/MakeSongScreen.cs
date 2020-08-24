@@ -13,6 +13,7 @@ public class MakeSongScreen : MonoBehaviour
     public string selectedGenre;
 
     public Button makeSongButton;
+    public InputField songName;
 
     private void Start()
     {
@@ -32,7 +33,16 @@ public class MakeSongScreen : MonoBehaviour
 
 
     public void CreateSong() {
-        mAS.CreateSong(selectedArtist, selectedProducer, selectedGenre);
+        mAS.CreateSong(selectedArtist, selectedProducer, selectedGenre, songName.text);
+        DeselectAll();
+        
+
+    }
+
+    void DeselectAll() {
+        selectedArtist = null;
+        selectedProducer = null;
+        selectedGenre = null;
 
     }
 

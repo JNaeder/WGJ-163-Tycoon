@@ -23,13 +23,43 @@ public class ListButton : MonoBehaviour
 
     private void Update()
     {
-        if (mSS.selectedArtist == buttonArtist || mSS.selectedProducer == buttonProducer || mSS.selectedGenre == buttonGenre)
+        if (buttonArtist != null)
         {
-            thisButton.GetComponent<Image>().color = Color.green;
+            if (mSS.selectedArtist == buttonArtist)
+            {
+                TurnButtonColor(Color.green);
+            }
+            else {
+                TurnButtonColor(Color.white);
+            }
         }
-        else {
-            thisButton.GetComponent<Image>().color = Color.white;
+        else if (buttonProducer != null)
+        {
+            if (mSS.selectedProducer == buttonProducer)
+            {
+                TurnButtonColor(Color.green);
+            }
+            else {
+                TurnButtonColor(Color.white);
+            }
+
         }
+        else if (buttonGenre != null) {
+            if (mSS.selectedGenre == buttonGenre)
+            {
+                TurnButtonColor(Color.green);
+            }
+            else {
+                TurnButtonColor(Color.white);
+
+            }
+
+        }
+    }
+
+    void TurnButtonColor(Color newColor) {
+        thisButton.GetComponent<Image>().color = newColor;
+
     }
 
 

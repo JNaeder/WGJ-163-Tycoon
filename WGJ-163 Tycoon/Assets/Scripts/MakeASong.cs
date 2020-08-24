@@ -9,7 +9,7 @@ public class MakeASong : MonoBehaviour
     Song newSong;
 
 
-    public void CreateSong(Artist theArtist, Producer theProducer, string theGenre) {
+    public void CreateSong(Artist theArtist, Producer theProducer, string theGenre, string songName) {
 
         
 
@@ -28,17 +28,18 @@ public class MakeASong : MonoBehaviour
 
 
 
-        MakeNewSong(theArtist, theProducer, theGenre, successNum);
-        Debug.Log("Made a song with " + newSong.theArtist.artistName + "and " + newSong.theProducer.producerName + " in the style of " + newSong.genre + " and topped the charts at " + newSong.chartNum);
+        MakeNewSong(theArtist, theProducer, theGenre, successNum, songName);
+        Debug.Log(newSong.theArtist.artistName + "and " + newSong.theProducer.producerName + " made the song '" + newSong.songName + "' in the style of " + newSong.genre + " and topped the charts at " + newSong.chartNum);
     }
 
 
-    void MakeNewSong(Artist theArtist, Producer theProducer, string theGenre, float successNum) {
+    void MakeNewSong(Artist theArtist, Producer theProducer, string theGenre, float successNum, string theSongName) {
         newSong = ScriptableObject.CreateInstance<Song>();
         newSong.theArtist = theArtist;
         newSong.theProducer = theProducer;
         newSong.genre = theGenre;
         newSong.chartNum = Mathf.RoundToInt(successNum);
+        newSong.songName = theSongName;
 
         gM.AddProducedSong(newSong);
 

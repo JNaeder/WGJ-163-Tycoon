@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         moneyText.text = "$" + totalMoney.ToString();
-        artistNumText.text = listOfSignedArtists.Count.ToString();
     }
 
 
@@ -51,6 +50,12 @@ public class GameManager : MonoBehaviour
 
     public void ActiateOneScreen(GameObject newScreen) {
         newScreen.SetActive(true);
+
+    }
+
+
+    public void ChangeMoney(float newMoney) {
+        totalMoney += newMoney;
 
     }
 }
