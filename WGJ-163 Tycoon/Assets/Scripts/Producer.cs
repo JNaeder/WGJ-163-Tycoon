@@ -10,4 +10,5 @@ public class Producer : ScriptableObject
     public float producerTalent;
     public float producerBrand;
     public string genre;
+    public float hireCost;
 }

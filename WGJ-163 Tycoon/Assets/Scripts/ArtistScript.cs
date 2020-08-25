@@ -11,6 +11,7 @@ public class ArtistScript : MonoBehaviour
     public Text artistage;
     public Text artistStyle;
     public Text artistTalent;
+    public Text artistGenre;
 
     GameManager gM;
     FindArtistScreen fAS;
@@ -30,6 +31,7 @@ public class ArtistScript : MonoBehaviour
         artistage.text = theArtist.artistAge.ToString();
         artistStyle.text = theArtist.styleStat.ToString("F1");
         artistTalent.text = theArtist.talentStat.ToString("F1");
+        artistGenre.text = theArtist.genre;
     }
 
 

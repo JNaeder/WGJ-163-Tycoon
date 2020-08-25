@@ -11,6 +11,8 @@ public class ProducerScript : MonoBehaviour
     public Text producerAge;
     public Text producerTalent;
     public Text producerBrand;
+    public Text producerGenre;
+    public Text producerCost;
 
     GameManager gM;
     FindProducersScreen fPS;
@@ -31,6 +33,8 @@ public class ProducerScript : MonoBehaviour
         producerAge.text = theProducer.producerAge.ToString();
         producerTalent.text = theProducer.producerTalent.ToString("F1");
         producerBrand.text = theProducer.producerBrand.ToString("F1");
+        producerGenre.text = theProducer.genre;
+        producerCost.text = "$" + theProducer.hireCost.ToString("F2");
     }
 
     public void SelectCard()

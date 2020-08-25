@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        moneyText.text = "$" + totalMoney.ToString();
+        moneyText.text = "$" + totalMoney.ToString("F2");
     }
 
 
@@ -56,6 +56,11 @@ public class GameManager : MonoBehaviour
 
     public void ChangeMoney(float newMoney) {
         totalMoney += newMoney;
+
+    }
+
+    public void FireArtist(Artist theArtist) {
+        listOfSignedArtists.Remove(theArtist);
 
     }
 }

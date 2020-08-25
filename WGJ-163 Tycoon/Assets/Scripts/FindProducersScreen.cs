@@ -77,6 +77,9 @@ public class FindProducersScreen : MonoBehaviour
         newProducer.producerAge = Random.Range(18, 50);
         newProducer.producerTalent = Random.Range(0.0f, 10.0f);
         newProducer.producerBrand = Random.Range(0.0f, 10.0f);
+        int randNum2 = Random.Range(0, gM.genresList.Length);
+        newProducer.genre = gM.genresList[randNum2];
+        newProducer.hireCost = CalculateHireCost(newProducer.producerTalent, newProducer.producerBrand);
         return newProducer;
 
 
@@ -85,8 +88,16 @@ public class FindProducersScreen : MonoBehaviour
     public void ChooseProducer()
     {
         Producer newProducer = selectedCard.GetComponent<ProducerScript>().theProducer;
+        gM.totalMoney -= newProducer.hireCost;
         gM.HireProducer(newProducer);
         Destroy(selectedCard);
+
+    }
+
+    public float CalculateHireCost(float talent, float brand) {
+        float newCost = talent * brand * 50;
+        return newCost;
+
 
     }
 }

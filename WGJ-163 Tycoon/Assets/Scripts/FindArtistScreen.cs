@@ -14,6 +14,9 @@ public class FindArtistScreen : MonoBehaviour
     public TextAsset maleNamesTxt;
     string[] maleNames;
 
+    public TextAsset femaleNamesTxt;
+    string[] femaleNames;
+
     public Button chooseArtistButton;
 
     
@@ -22,6 +25,7 @@ public class FindArtistScreen : MonoBehaviour
     private void Start()
     {
         maleNames = maleNamesTxt.text.Split('\n');
+        femaleNames = femaleNamesTxt.text.Split('\n');
 
     }
 
@@ -67,11 +71,27 @@ public class FindArtistScreen : MonoBehaviour
 
     Artist CreateRandomArtist() {
         Artist newArtist = ScriptableObject.CreateInstance<Artist>();
-        int randNum = Random.Range(0, maleNames.Length);
-        newArtist.artistName = maleNames[randNum];
+        int randGender = Random.Range(0, 2);
+        if (randGender == 0)
+        {
+            int randNum = Random.Range(0, maleNames.Length);
+            newArtist.artistName = maleNames[randNum];
+        }
+        else {
+            int randNum = Random.Range(0, femaleNames.Length);
+            newArtist.artistName = femaleNames[randNum];
+
+        }
+
+        
         newArtist.artistAge = Random.Range(18, 50);
         newArtist.styleStat = Random.Range(0.0f, 10.0f);
         newArtist.talentStat = Random.Range(0.0f, 10.0f);
+        int randNum2 = Random.Range(0, gM.genresList.Length);
+        newArtist.genre = gM.genresList[randNum2];
+
+        newArtist.name = newArtist.artistName;
+
         return newArtist;
     }
 
