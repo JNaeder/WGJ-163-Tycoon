@@ -12,6 +12,7 @@ public class ArtistScript : MonoBehaviour
     public Text artistStyle;
     public Text artistTalent;
     public Text artistGenre;
+    public Image artistImage;
 
     GameManager gM;
     FindArtistScreen fAS;
@@ -32,6 +33,7 @@ public class ArtistScript : MonoBehaviour
         artistStyle.text = theArtist.styleStat.ToString("F1");
         artistTalent.text = theArtist.talentStat.ToString("F1");
         artistGenre.text = theArtist.genre;
+        artistImage.sprite = theArtist.artistImage;
     }
 
 

@@ -19,6 +19,7 @@ public class ArtistManagment : MonoBehaviour
 
 
     public Text artistName, artistAge, artistTalent, artistStyle, artistGenre;
+    public Image artistImage;
 
    
 
@@ -62,6 +63,7 @@ public class ArtistManagment : MonoBehaviour
         artistTalent.text = theArtist.talentStat.ToString("F1");
         artistStyle.text = theArtist.styleStat.ToString("F1");
         artistGenre.text = theArtist.genre;
+        artistImage.sprite = theArtist.artistImage;
 
     }
 

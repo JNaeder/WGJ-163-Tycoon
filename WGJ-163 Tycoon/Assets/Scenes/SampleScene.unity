@@ -3320,6 +3320,10 @@ MonoBehaviour:
   cardParent: {fileID: 105492337}
   maleNamesTxt: {fileID: 4900000, guid: 894a0c9b108ca4f82a8cd04edc7cea33, type: 3}
   femaleNamesTxt: {fileID: 4900000, guid: bdbbb122e2d104a43ba7eb4446beb7a1, type: 3}
+  maleImages:
+  - {fileID: 21300000, guid: 5c34eb35f02a93643837cc349fcac111, type: 3}
+  femaleImages:
+  - {fileID: 21300000, guid: 5c34eb35f02a93643837cc349fcac111, type: 3}
   chooseArtistButton: {fileID: 331252404}
   selectedCard: {fileID: 0}
 --- !u!1 &306300780
@@ -3877,11 +3881,11 @@ RectTransform:
   m_Father: {fileID: 1372591609}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 135.3}
-  m_SizeDelta: {x: 679.0002, y: 111.276215}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.4973755}
+  m_SizeDelta: {x: -0.000061035156, y: 83.55478}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &365688084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3899,7 +3903,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 150, y: 50}
@@ -4652,6 +4656,8 @@ MonoBehaviour:
   producerCard: {fileID: 5953251488490879301, guid: 5892a17cc463649f2ad5c27371604307, type: 3}
   cardParent: {fileID: 1879247351}
   producerNamesTxt: {fileID: 4900000, guid: 4d5fcf7dfcdce53498b11d99d59299c8, type: 3}
+  producerImages:
+  - {fileID: 21300000, guid: 5c34eb35f02a93643837cc349fcac111, type: 3}
   chooseProducerButton: {fileID: 1029272096}
   selectedCard: {fileID: 0}
 --- !u!1 &457672212
@@ -6081,7 +6087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174.25, y: -22.999619}
+  m_AnchoredPosition: {x: 174.25, y: -22.999634}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &600527081
@@ -9540,7 +9546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 522.75, y: -43.500008}
+  m_AnchoredPosition: {x: 804, y: -43.500008}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029272096
@@ -10009,6 +10015,7 @@ MonoBehaviour:
   producerBrand: {fileID: 1016551380}
   producerTalent: {fileID: 542776285}
   producerGenre: {fileID: 1130656824}
+  producerImage: {fileID: 1536416081}
 --- !u!1 &1077433782
 GameObject:
   m_ObjectHideFlags: 0
@@ -11691,6 +11698,7 @@ MonoBehaviour:
   artistTalent: {fileID: 1883970898}
   artistStyle: {fileID: 73853963}
   artistGenre: {fileID: 1588108275}
+  artistImage: {fileID: 1350598226}
 --- !u!1 &1273858573
 GameObject:
   m_ObjectHideFlags: 0
@@ -15701,7 +15709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 522.75, y: -22.999619}
+  m_AnchoredPosition: {x: 522.75, y: -22.999634}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1803028340
@@ -17263,7 +17271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 174.25, y: -43.500008}
+  m_AnchoredPosition: {x: 268, y: -43.500008}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1979293182

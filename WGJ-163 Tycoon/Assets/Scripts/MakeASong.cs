@@ -37,7 +37,7 @@ public class MakeASong : MonoBehaviour
         catchiness = Mathf.Clamp(catchiness, 0f, 10f);
 
         //Make Polish (Involve Studio Expense)
-        float randNum2 = Random.Range(-2f, 5f);
+        float randNum2 = Random.Range(-2f, 2f);
         float polish = ((51 - (5000f / studioExpense))/ 7 ) + randNum2;
         polish = Mathf.Clamp(polish, 0f, 10f);
 
@@ -47,7 +47,7 @@ public class MakeASong : MonoBehaviour
         unique = Mathf.Clamp(unique, 0f, 10f);
 
         //Make Hype (Brand)
-        float hype = theProducer.producerBrand + theArtist.styleStat + Random.Range(-4,4);
+        float hype = theProducer.producerBrand + theArtist.styleStat + Random.Range(-4f,4f);
 
 
         // Make the Song

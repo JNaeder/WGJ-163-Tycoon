@@ -15,6 +15,8 @@ public class FindProducersScreen : MonoBehaviour
     public TextAsset producerNamesTxt;
     string[] producerNames;
 
+    public Sprite[] producerImages;
+
     public Button chooseProducerButton;
 
     [HideInInspector]
@@ -74,11 +76,14 @@ public class FindProducersScreen : MonoBehaviour
         Producer newProducer = ScriptableObject.CreateInstance<Producer>();
         int randNum = Random.Range(0, producerNames.Length);
         newProducer.producerName = producerNames[randNum];
+        int randNum2 = Random.Range(0, producerImages.Length);
+        newProducer.producerImage = producerImages[randNum2];
+
         newProducer.producerAge = Random.Range(18, 50);
         newProducer.producerTalent = Random.Range(0.0f, 10.0f);
         newProducer.producerBrand = Random.Range(0.0f, 10.0f);
-        int randNum2 = Random.Range(0, gM.genresList.Length);
-        newProducer.genre = gM.genresList[randNum2];
+        int randNum3 = Random.Range(0, gM.genresList.Length);
+        newProducer.genre = gM.genresList[randNum3];
         newProducer.hireCost = CalculateHireCost(newProducer.producerTalent, newProducer.producerBrand);
         return newProducer;
 

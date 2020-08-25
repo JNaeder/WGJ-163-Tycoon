@@ -827,6 +827,7 @@ MonoBehaviour:
   artistStyle: {fileID: 5953251487197900539}
   artistTalent: {fileID: 5953251487515386882}
   artistGenre: {fileID: 8351981701940713769}
+  artistImage: {fileID: 5953251487890804469}
 --- !u!114 &15656244925747395
 MonoBehaviour:
   m_ObjectHideFlags: 0

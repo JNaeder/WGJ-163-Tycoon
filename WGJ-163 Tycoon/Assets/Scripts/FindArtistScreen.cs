@@ -17,6 +17,9 @@ public class FindArtistScreen : MonoBehaviour
     public TextAsset femaleNamesTxt;
     string[] femaleNames;
 
+    public Sprite[] maleImages;
+    public Sprite[] femaleImages;
+
     public Button chooseArtistButton;
 
     
@@ -76,10 +79,14 @@ public class FindArtistScreen : MonoBehaviour
         {
             int randNum = Random.Range(0, maleNames.Length);
             newArtist.artistName = maleNames[randNum];
+            int randNumm = Random.Range(0, maleImages.Length);
+            newArtist.artistImage = maleImages[randNumm];
         }
         else {
             int randNum = Random.Range(0, femaleNames.Length);
             newArtist.artistName = femaleNames[randNum];
+            int randNumm = Random.Range(0, femaleImages.Length);
+            newArtist.artistImage = femaleImages[randNumm];
 
         }
 

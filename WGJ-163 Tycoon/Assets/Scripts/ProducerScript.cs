@@ -13,6 +13,7 @@ public class ProducerScript : MonoBehaviour
     public Text producerBrand;
     public Text producerGenre;
     public Text producerCost;
+    public Image producerImage;
 
     GameManager gM;
     FindProducersScreen fPS;
@@ -35,6 +36,7 @@ public class ProducerScript : MonoBehaviour
         producerBrand.text = theProducer.producerBrand.ToString("F1");
         producerGenre.text = theProducer.genre;
         producerCost.text = "$" + theProducer.hireCost.ToString("F2");
+        producerImage.sprite = theProducer.producerImage;
     }
 
     public void SelectCard()

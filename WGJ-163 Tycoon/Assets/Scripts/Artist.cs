@@ -11,6 +11,8 @@ public class Artist : ScriptableObject
     public float talentStat;
     public string genre;
 
+    public Sprite artistImage;
+
 
    
 }

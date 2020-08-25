@@ -841,6 +841,7 @@ MonoBehaviour:
   producerBrand: {fileID: 5953251487515386882}
   producerGenre: {fileID: 580546665457098984}
   producerCost: {fileID: 7679270960336182413}
+  producerImage: {fileID: 5953251487890804469}
 --- !u!114 &15656244925747395
 MonoBehaviour:
   m_ObjectHideFlags: 0

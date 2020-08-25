@@ -11,4 +11,6 @@ public class Producer : ScriptableObject
     public float producerBrand;
     public string genre;
     public float hireCost;
+
+    public Sprite producerImage;
 }

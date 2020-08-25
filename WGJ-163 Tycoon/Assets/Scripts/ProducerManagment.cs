@@ -18,6 +18,7 @@ public class ProducerManagment : MonoBehaviour
 
 
     public Text producerName, producerAge, producerBrand, producerTalent, producerGenre;
+    public Image producerImage;
 
 
 
@@ -62,6 +63,7 @@ public class ProducerManagment : MonoBehaviour
         producerBrand.text = theProducer.producerBrand.ToString("F1");
         producerTalent.text = theProducer.producerTalent.ToString("F1");
         producerGenre.text = theProducer.genre;
+        producerImage.sprite = theProducer.producerImage;
 
     }
 
