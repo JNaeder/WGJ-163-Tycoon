@@ -9,11 +9,11 @@ public class ProducerScript : MonoBehaviour
 
     public Text producerName;
     public Text producerAge;
-    public Text producerTalent;
-    public Text producerBrand;
     public Text producerGenre;
     public Text producerCost;
     public Image producerImage;
+    public Image producerBrand;
+    public Image producerTalent;
 
     GameManager gM;
     FindProducersScreen fPS;
@@ -23,7 +23,7 @@ public class ProducerScript : MonoBehaviour
     {
         gM = FindObjectOfType<GameManager>();
         fPS = FindObjectOfType<FindProducersScreen>();
-
+        
 
     }
 
@@ -32,13 +32,25 @@ public class ProducerScript : MonoBehaviour
     {
         producerName.text = theProducer.producerName;
         producerAge.text = theProducer.producerAge.ToString();
-        producerTalent.text = theProducer.producerTalent.ToString("F1");
-        producerBrand.text = theProducer.producerBrand.ToString("F1");
         producerGenre.text = theProducer.genre;
         producerCost.text = "$" + theProducer.hireCost.ToString("F2");
         producerImage.sprite = theProducer.producerImage;
+        SetPercBars();
     }
 
+    void SetPercBars()
+    {
+        float talentPerc = theProducer.producerTalent / 10;
+        float stylePerc = theProducer.producerBrand / 10;
+        Vector3 talentScale = producerTalent.rectTransform.localScale;
+        talentScale.x = talentPerc;
+        producerTalent.rectTransform.localScale = talentScale;
+        Vector3 styleScale = producerBrand.rectTransform.localScale;
+        styleScale.x = stylePerc;
+        producerBrand.rectTransform.localScale = styleScale;
+
+
+    }
     public void SelectCard()
     {
         fPS.selectedCard = this.gameObject;

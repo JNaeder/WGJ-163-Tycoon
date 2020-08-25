@@ -17,11 +17,17 @@ public class ProducerManagment : MonoBehaviour
 
 
 
-    public Text producerName, producerAge, producerBrand, producerTalent, producerGenre;
-    public Image producerImage;
+    public Text producerName, producerGenre;
+    public Image producerImage, producerTalent, producerBrand;
 
 
-
+    private void Update()
+    {
+        if (selectedProducer != null)
+        {
+            SetPercBars();
+        }
+    }
     private void OnEnable()
     {
         DeleteList();
@@ -42,6 +48,19 @@ public class ProducerManagment : MonoBehaviour
 
 
     }
+    void SetPercBars()
+    {
+        float talentPerc = selectedProducer.producerTalent / 10;
+        float stylePerc = selectedProducer.producerBrand / 10;
+        Vector3 talentScale = producerTalent.rectTransform.localScale;
+        talentScale.x = talentPerc;
+        producerTalent.rectTransform.localScale = talentScale;
+        Vector3 styleScale = producerBrand.rectTransform.localScale;
+        styleScale.x = stylePerc;
+        producerBrand.rectTransform.localScale = styleScale;
+
+
+    }
 
     public void DeleteList()
     {
@@ -59,9 +78,6 @@ public class ProducerManagment : MonoBehaviour
     {
         detailWindow.SetActive(true);
         producerName.text = theProducer.producerName;
-        producerAge.text = theProducer.producerAge.ToString();
-        producerBrand.text = theProducer.producerBrand.ToString("F1");
-        producerTalent.text = theProducer.producerTalent.ToString("F1");
         producerGenre.text = theProducer.genre;
         producerImage.sprite = theProducer.producerImage;
 

@@ -9,10 +9,10 @@ public class ArtistScript : MonoBehaviour
 
     public Text artistName;
     public Text artistage;
-    public Text artistStyle;
-    public Text artistTalent;
     public Text artistGenre;
     public Image artistImage;
+    public Image artistTalent;
+    public Image artistStyle;
 
     GameManager gM;
     FindArtistScreen fAS;
@@ -30,10 +30,22 @@ public class ArtistScript : MonoBehaviour
     {
         artistName.text = theArtist.artistName;
         artistage.text = theArtist.artistAge.ToString();
-        artistStyle.text = theArtist.styleStat.ToString("F1");
-        artistTalent.text = theArtist.talentStat.ToString("F1");
         artistGenre.text = theArtist.genre;
         artistImage.sprite = theArtist.artistImage;
+        SetPercBars();
+    }
+
+    void SetPercBars() {
+        float talentPerc = theArtist.talentStat / 10;
+        float stylePerc = theArtist.styleStat / 10;
+        Vector3 talentScale = artistTalent.rectTransform.localScale;
+        talentScale.x = talentPerc;
+        artistTalent.rectTransform.localScale = talentScale;
+        Vector3 styleScale = artistStyle.rectTransform.localScale;
+        styleScale.x = stylePerc;
+        artistStyle.rectTransform.localScale = styleScale;
+
+
     }
 
 

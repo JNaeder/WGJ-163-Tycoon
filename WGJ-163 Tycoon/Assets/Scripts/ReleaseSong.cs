@@ -7,7 +7,7 @@ public class ReleaseSong : MonoBehaviour
     public GameManager gM;
 
     public void CalculateSongSuccess(Song theSong) {
-        float successNum = (theSong.catchy + theSong.unique + theSong.polish) * theSong.hype;
+        float successNum = ((theSong.catchy * 2) + theSong.unique + theSong.polish) * theSong.hype;
 
         theSong.chartNum = Mathf.RoundToInt(500 - successNum);
         theSong.chartNum = Mathf.Clamp(theSong.chartNum, 1, 500);
@@ -21,9 +21,13 @@ public class ReleaseSong : MonoBehaviour
             theSong.moneyEarned = successNum * 7f;
 
         }
-        else {
+        else if (theSong.chartNum > 2)
+        {
             theSong.moneyEarned = successNum * 20f;
 
+        }
+        else {
+            theSong.moneyEarned = successNum * 40f;
         }
         
 

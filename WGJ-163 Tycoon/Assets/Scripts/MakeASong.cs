@@ -11,6 +11,8 @@ public class MakeASong : MonoBehaviour
 
     public TextAsset hiphopSongNames, rockSongNames, countrySongNames, popSongNames, rBSongNames;
 
+    float artistTalentBonus;
+
 
     public void CreateSong(Artist theArtist, Producer theProducer, string theGenre, float studioExpense) {
         //Song Name Generator
@@ -32,19 +34,21 @@ public class MakeASong : MonoBehaviour
 
 
         //Make Catchiness (Talent)
-        float randNum1 = Random.Range(0f, 2f);
+        float randNum1 = Random.Range(0.5f, 1.5f);
         float catchiness = ((talentScore / 2) * randNum1) - genrePenalty;
         catchiness = Mathf.Clamp(catchiness, 0f, 10f);
+        artistTalentBonus += catchiness / 10;
 
         //Make Polish (Involve Studio Expense)
-        float randNum2 = Random.Range(-2f, 2f);
-        float polish = ((51 - (5000f / studioExpense))/ 7 ) + randNum2;
+        float randNum2 = Random.Range(-1f, 1f);
+        float polish = ((studioExpense / 1000) * 2) + randNum2;
         polish = Mathf.Clamp(polish, 0f, 10f);
 
         //Make Unique (Random and Talent)
         float randNum3 = Random.Range(-5f, 5f);
         float unique = (talentScore / 2) - genrePenalty;
         unique = Mathf.Clamp(unique, 0f, 10f);
+        artistTalentBonus += unique / 10;
 
         //Make Hype (Brand)
         float hype = theProducer.producerBrand + theArtist.styleStat + Random.Range(-4f,4f);
@@ -52,6 +56,8 @@ public class MakeASong : MonoBehaviour
 
         // Make the Song
         MakeNewSong(theArtist, theProducer, theGenre, songName, catchiness, polish, unique, hype);
+
+        //theArtist.talentStat += artistTalentBonus;
     }
 
 

@@ -9,22 +9,27 @@ public class GameManager : MonoBehaviour
     public GameObject artistChooseScreen;
     public GameObject producerChooseScreen;
     public GameObject makeSongScreen;
+    public GameObject startScreen;
+    public GameObject mainMenu;
 
     public Text moneyText;
-    public Text artistNumText;
     public float totalMoney = 0.0f;
-    public int numberOfArtists = 0;
+    public Text recordLabelNameTxt;
 
     public List<Artist> listOfSignedArtists = new List<Artist>();
     public List<Producer> listOfHiredProducers = new List<Producer>();
     public List<Song> listOfProducedSongs = new List<Song>();
     
     public string[] genresList;
+
+
+    public string recordLabelName;
     
 
     private void Update()
     {
         moneyText.text = "$" + totalMoney.ToString("F2");
+        recordLabelNameTxt.text = recordLabelName;
     }
 
 
@@ -62,5 +67,15 @@ public class GameManager : MonoBehaviour
     public void FireArtist(Artist theArtist) {
         listOfSignedArtists.Remove(theArtist);
 
+    }
+
+    public void SetRecordLabelName(string value) {
+        recordLabelName = value;
+
+    }
+
+    public void StartGame() {
+        startScreen.SetActive(false);
+        mainMenu.SetActive(true);
     }
 }

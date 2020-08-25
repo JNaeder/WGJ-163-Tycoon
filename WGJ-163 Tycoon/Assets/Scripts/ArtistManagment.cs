@@ -18,10 +18,16 @@ public class ArtistManagment : MonoBehaviour
 
 
 
-    public Text artistName, artistAge, artistTalent, artistStyle, artistGenre;
-    public Image artistImage;
+    public Text artistName, artistGenre;
+    public Image artistImage, artistTalent, artistStyle;
 
-   
+    private void Update()
+    {
+        if (selectedArtist != null)
+        {
+            SetPercBars();
+        }
+    }
 
     private void OnEnable()
     {
@@ -43,6 +49,19 @@ public class ArtistManagment : MonoBehaviour
 
 
     }
+    void SetPercBars()
+    {
+        float talentPerc = selectedArtist.talentStat / 10;
+        float stylePerc = selectedArtist.styleStat / 10;
+        Vector3 talentScale = artistTalent.rectTransform.localScale;
+        talentScale.x = talentPerc;
+        artistTalent.rectTransform.localScale = talentScale;
+        Vector3 styleScale = artistStyle.rectTransform.localScale;
+        styleScale.x = stylePerc;
+        artistStyle.rectTransform.localScale = styleScale;
+
+
+    }
 
     public void DeleteArtistList()
     {
@@ -59,9 +78,6 @@ public class ArtistManagment : MonoBehaviour
     public void ShowArtistDetails(Artist theArtist) {
         detailWindow.SetActive(true);
         artistName.text = theArtist.artistName;
-        artistAge.text = theArtist.artistAge.ToString();
-        artistTalent.text = theArtist.talentStat.ToString("F1");
-        artistStyle.text = theArtist.styleStat.ToString("F1");
         artistGenre.text = theArtist.genre;
         artistImage.sprite = theArtist.artistImage;
 

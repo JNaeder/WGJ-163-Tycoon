@@ -21,12 +21,16 @@ public class SongManagment : MonoBehaviour
 
 
 
-    public Text songTitle, songGenre, songArtist, songProducer, songCatchiness, songPolish, songUniqness, songHype;
+    public Text songTitle, songGenre, songArtist, songProducer, songHype;
+    public Image songCatchiness, songPolish, songUniqness;
 
     public Text popUpSongTitle, popUpSongArtist, popUpSongProducer, popUpSongGenre, popUpSongChartNum, popUpSongMoney;
 
 
-
+    private void Update()
+    {
+        SetPercBars();
+    }
     private void OnEnable()
     {
         DeleteList();
@@ -62,6 +66,27 @@ public class SongManagment : MonoBehaviour
 
     }
 
+    void SetPercBars()
+    {
+        float catchinessPerc = selectedSong.catchy / 10;
+        float polishPerc = selectedSong.polish / 10;
+        float uniqnessPerc = selectedSong.unique / 10;
+
+        Vector3 catchinessScale = songCatchiness.rectTransform.localScale;
+        catchinessScale.x = catchinessPerc;
+        songCatchiness.rectTransform.localScale = catchinessScale;
+
+        Vector3 polishScale = songPolish.rectTransform.localScale;
+        polishScale.x = polishPerc;
+        songPolish.rectTransform.localScale = polishScale;
+
+        Vector3 uniqnessScale = songUniqness.rectTransform.localScale;
+        uniqnessScale.x = uniqnessPerc;
+        songUniqness.rectTransform.localScale = uniqnessScale;
+
+
+    }
+
 
     public void ShowSongDetails(Song theSong)
     {
@@ -70,9 +95,6 @@ public class SongManagment : MonoBehaviour
         songArtist.text = theSong.theArtist.artistName;
         songProducer.text = theSong.theProducer.producerName;
         songGenre.text = theSong.genre;
-        songCatchiness.text = theSong.catchy.ToString("F1");
-        songPolish.text = theSong.polish.ToString("F1");
-        songUniqness.text = theSong.unique.ToString("F1");
         songHype.text = theSong.hype.ToString("F1");
 
 

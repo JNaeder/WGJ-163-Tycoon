@@ -32,7 +32,7 @@ public class Marketing : MonoBehaviour
 
     public void CalculateHype()
     {
-        totalHype = Mathf.RoundToInt(radioAmount / 1000) + Mathf.RoundToInt(tvAmount / 1000) + Mathf.RoundToInt(socialMediaAmount / 1000);
+        totalHype = Mathf.RoundToInt(radioAmount / 400) + Mathf.RoundToInt(tvAmount / 700) + Mathf.RoundToInt(socialMediaAmount / 200);
 
 
     }
