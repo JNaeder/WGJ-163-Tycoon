@@ -29,7 +29,10 @@ public class SongManagment : MonoBehaviour
 
     private void Update()
     {
-        SetPercBars();
+        if (selectedSong != null)
+        {
+            SetPercBars();
+        }
     }
     private void OnEnable()
     {

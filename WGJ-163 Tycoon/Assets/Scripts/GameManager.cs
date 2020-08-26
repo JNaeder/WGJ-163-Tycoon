@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject makeSongScreen;
     public GameObject startScreen;
     public GameObject mainMenu;
+    public GameObject gameOverScreen;
 
     public Text moneyText;
     public float totalMoney = 0.0f;
@@ -24,12 +25,24 @@ public class GameManager : MonoBehaviour
 
 
     public string recordLabelName;
+
+    public FindArtistScreen fAS;
+    public FindProducersScreen fPS;
+    public MakeSongScreen mSS;
+    public SongManagment sM;
+
     
+
 
     private void Update()
     {
         moneyText.text = "$" + totalMoney.ToString("F2");
         recordLabelNameTxt.text = recordLabelName;
+
+        if (totalMoney < 0) {
+            GameOver();
+
+        }
     }
 
 
@@ -51,6 +64,8 @@ public class GameManager : MonoBehaviour
         producerChooseScreen.SetActive(false);
         managmentScreen.SetActive(false);
         makeSongScreen.SetActive(false);
+        gameOverScreen.SetActive(false);
+        startScreen.SetActive(false);
     }
 
     public void ActiateOneScreen(GameObject newScreen) {
@@ -77,5 +92,21 @@ public class GameManager : MonoBehaviour
     public void StartGame() {
         startScreen.SetActive(false);
         mainMenu.SetActive(true);
+    }
+
+    public void GameOver() {
+
+        DisableAllScreen();
+        mainMenu.SetActive(false);
+        ActiateOneScreen(gameOverScreen);
+        listOfHiredProducers.Clear();
+        listOfProducedSongs.Clear();
+        listOfSignedArtists.Clear();
+        fAS.DestroyCards();
+        fPS.DestroyCards();
+        mSS.ClosePopUp();
+        sM.ClosePopUpWindow();
+
+        totalMoney = 5000;
     }
 }
